@@ -30,6 +30,7 @@ Test Docker Compose
 
 ## Palworld
 Server: hazy.servebeer.com:8211
+
 Password: 8008135
 
 If it gives you an error about not entering a password, click to join another private server (has lock icon), enter password, but hit "No" to cancel joining, then enter private server.
