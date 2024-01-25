@@ -37,6 +37,8 @@ If it gives you an error about not entering a password, click to join another pr
 
 https://github.com/jammsen/docker-palworld-dedicated-server
 
+On router, forward ports 8211 and 25575
+
 ```
 sudo mkdir /srv
 cd /srv
@@ -89,4 +91,9 @@ services:
       - ADMIN_PASSWORD=ayylmao42069!
     volumes:
       - ./game:/palworld
+
+  rcon:
+    image: outdead/rcon:latest
+    entrypoint: ['/rcon', '-a', 'hazy.servebeer.com:25575', '-p', 'ayylmao42069!']
+    profiles: ['rcon'] 
 ```
