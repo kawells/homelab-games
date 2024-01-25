@@ -27,6 +27,11 @@ https://tailscale.com/kb/1275/install-ubuntu-2304
 
 Test Docker Compose
 
+### Update timezone
+```
+timedatectl set-timezone America/Los_Angeles
+timedatectl
+```
 
 ## Palworld
 Server: hazy.servebeer.com:8211
@@ -94,6 +99,26 @@ services:
 
   rcon:
     image: outdead/rcon:latest
-    entrypoint: ['/rcon', '-a', 'hazy.servebeer.com:25575', '-p', 'ayylmao42069!']
-    profiles: ['rcon'] 
+    entrypoint: ['/rcon', '-a', 'palworld-dedicated-server:25575', '-p', 'ayylmao42069!']
+    profiles: ['rcon']  # prevents booting up with `docker compose up`
 ```
+
+Crontab setup
+`nano /etc/crontab`
+Add: `0 3 * * * /srv/palworld/restart.sh`
+```
+touch /srv/palworld/restart.sh
+nano /srv/palworld/restart.sh
+```
+restart.sh:
+```
+#!/bin/bash
+
+# Change to the directory containing the docker-compose.yml file
+cd /srv/palworld/
+
+# Restart all containers using Docker Compose
+docker-compose restart
+```
+Make executable
+`chmod +x /srv/palworld/restart.sh`
