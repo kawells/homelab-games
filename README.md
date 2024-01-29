@@ -117,6 +117,9 @@ restart.sh:
 # Change to the directory containing the docker-compose.yml file
 cd /srv/palworld/
 
+# Pull new images
+docker-compose pull
+
 # Restart all containers using Docker Compose
 docker-compose restart
 ```
