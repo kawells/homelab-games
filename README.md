@@ -125,3 +125,5 @@ docker-compose restart
 ```
 Make executable
 `chmod +x /srv/palworld/restart.sh`
+Run update/restart script
+`bash /srv/palworld/restart.sh`
