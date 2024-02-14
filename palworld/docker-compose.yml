@@ -15,7 +15,7 @@ services:
         protocol: tcp
         mode: host
     env_file:
-      - .default.env
+      - default.env
     volumes:
       - ./game:/palworld
   rcon:
