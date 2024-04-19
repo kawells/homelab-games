@@ -103,7 +103,7 @@ services:
     profiles: ['rcon']  # prevents booting up with `docker compose up`
 ```
 
-Crontab setup
+### Crontab setup
 `nano /etc/crontab`
 Add: `0 3 * * * /srv/palworld/restart.sh`
 ```
@@ -123,7 +123,11 @@ docker-compose pull
 # Restart all containers using Docker Compose
 docker-compose restart
 ```
+
 Make executable
 `chmod +x /srv/palworld/restart.sh`
 Run update/restart script
 `bash /srv/palworld/restart.sh`
+
+## Satisfactory
+[Docker Setup](https://hub.docker.com/r/wolveix/satisfactory-server)
