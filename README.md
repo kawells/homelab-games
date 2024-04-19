@@ -139,5 +139,13 @@ sudo chmod 777 /srv/satisfactory/game
 sudo touch docker-compose.yml
 sudo nano docker-compose.yml
 # paste the contents of the compose file
-
+sudo docker-compose pull
+sudo docker-compose up -d --remove-orphans
+sudo docker image prune -a -f
+sudo docker-compose ps
+sudo docker-compose logs -f
 ```
+Open ports on router
+- '7777:7777/udp'
+- '15000:15000/udp'
+- '15777:15777/udp'
