@@ -48,14 +48,14 @@ On router, forward ports 8211 and 25575
 sudo mkdir /srv
 cd /srv
 sudo mkdir /srv/palworld
+cd /srv/palworld
 sudo touch docker-compose.yml
 sudo nano docker-compose.yml
-chown root:root /srv -R
-chmod g+rwx /srv -R
+sudo chown root:root /srv -R
+sudo chmod g+rwx /srv -R
 # paste the contents of the compose file
-cd /srv/palworld
-mkdir /srv/palworld/game
-chmod 777 game
+sudo mkdir /srv/palworld/game
+sudo chmod 777 game
 docker-compose pull
 docker-compose up -d --remove-orphans
 docker image prune -a -f
@@ -131,3 +131,13 @@ Run update/restart script
 
 ## Satisfactory
 [Docker Setup](https://hub.docker.com/r/wolveix/satisfactory-server)
+```
+sudo mkdir /srv/satisfactory
+cd /srv/satisfactory
+sudo mkdir /srv/satisfactory/game
+sudo chmod 777 /srv/satisfactory/game
+sudo touch docker-compose.yml
+sudo nano docker-compose.yml
+# paste the contents of the compose file
+
+```
