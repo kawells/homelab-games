@@ -56,11 +56,11 @@ sudo chmod g+rwx /srv -R
 # paste the contents of the compose file
 sudo mkdir /srv/palworld/game
 sudo chmod 777 game
-docker-compose pull
-docker-compose up -d --remove-orphans
+docker compose pull
+docker compose up -d --remove-orphans
 docker image prune -a -f
-docker-compose ps
-docker-compose logs -f
+docker compose ps
+docker compose logs -f
 ```
 
 ```
@@ -139,11 +139,11 @@ sudo chmod 777 /srv/satisfactory/game
 sudo touch docker-compose.yml
 sudo nano docker-compose.yml
 # paste the contents of the compose file
-sudo docker-compose pull
-sudo docker-compose up -d --remove-orphans
+sudo docker compose pull
+sudo docker compose up -d --remove-orphans
 sudo docker image prune -a -f
-sudo docker-compose ps
-sudo docker-compose logs -f
+sudo docker compose ps
+sudo docker compose logs -f
 ```
 Open ports on router
 - '7777:7777/udp'
