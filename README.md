@@ -145,6 +145,19 @@ sudo docker image prune -a -f
 sudo docker compose ps
 sudo docker compose logs -f
 ```
+restart.sh:
+```
+#!/bin/bash
+
+# Change to the directory containing the docker-compose.yml file
+cd /srv/satisfactory/game
+
+# Pull new images
+docker-compose pull
+
+# Restart all containers using Docker Compose
+docker-compose restart
+```
 Open ports on router
 - '7777:7777/udp'
 - '15000:15000/udp'
