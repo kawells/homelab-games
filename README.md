@@ -2,19 +2,18 @@
 Documentation for game server
 
 ## IP Addresses
-eth on enp3s0 - 192.168.1.30
-wlan on wlp4s0 - 192.168.1.69
-tailscale - 100.114.16.12
+- eth on enp3s0 - `192.168.1.30`
+- wlan on wlp4s0 - `192.168.1.69`
+- tailscale - `100.114.16.12`
 
 ## Setup Steps
-install on SSD
-adjust partitions to fill SSD
+- install on SSD
+- adjust partitions to fill SSD
+- add microk8s, powershell, keepalived
 
-server name: games
-username: ubnt
-password: in BitWarden
-
-Add microk8s, powershell, keepalived
+- server name: `games`
+- username: `ubnt`
+- password: in BitWarden
 
 ### Install Docker
 https://docs.docker.com/engine/install/ubuntu/
