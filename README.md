@@ -149,7 +149,7 @@ restart.sh:
 #!/bin/bash
 
 # Change to the directory containing the docker-compose.yml file
-cd /srv/satisfactory/game
+cd /srv/satisfactory
 
 # Pull new images
 docker-compose pull
