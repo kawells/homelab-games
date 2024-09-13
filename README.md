@@ -117,10 +117,10 @@ restart.sh:
 cd /srv/palworld/
 
 # Pull new images
-docker-compose pull
+docker compose pull
 
 # Restart all containers using Docker Compose
-docker-compose restart
+docker compose restart
 ```
 
 Make executable
@@ -152,10 +152,10 @@ restart.sh:
 cd /srv/satisfactory
 
 # Pull new images
-docker-compose pull
+docker compose pull
 
 # Restart all containers using Docker Compose
-docker-compose restart
+docker compose restart
 ```
 Open ports on router
 - '7777:7777/udp'
