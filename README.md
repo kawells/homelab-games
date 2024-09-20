@@ -158,6 +158,4 @@ docker compose pull
 docker compose restart
 ```
 Open ports on router
-- '7777:7777/udp'
-- '15000:15000/udp'
-- '15777:15777/udp'
+- '7777:7777/udp+tcp'
