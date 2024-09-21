@@ -144,18 +144,39 @@ sudo docker image prune -a -f
 sudo docker compose ps
 sudo docker compose logs -f
 ```
+
+### Crontab setup
+`nano /etc/crontab`
+Add: `*/15 * * * * /srv/satisfactory/restart.sh >/dev/null 2>&1`
+```
+touch /srv/satisfactory/restart.sh
+nano /srv/satisfactory/restart.sh
+```
+Make executable
+`chmod +x /srv/satisfactory/restart.sh`
+
 restart.sh:
 ```
 #!/bin/bash
-
-# Change to the directory containing the docker-compose.yml file
-cd /srv/satisfactory
-
-# Pull new images
-docker compose pull
-
-# Restart all containers using Docker Compose
-docker compose restart
+echo Checking if Satisfactory is running...
+if echo > /dev/tcp/127.0.0.1/7777 > /dev/null
+then
+ echo Satisfactory is accessible locally.
+fi
+if echo > /dev/tcp/hazy.servebeer.com/7777 > /dev/null
+then
+ echo Satisfactory is accessible externally.
+ exit 0
+else
+ echo Satisfactory is not running.  Will attempt to start it.
+ # Change to the directory containing the docker-compose.yml file
+ cd /srv/satisfactory
+ # Pull new images
+ docker compose pull
+ # Restart all containers using Docker Compose
+ docker compose restart
+ exit 1
+fi
 ```
 Open ports on router
 - '7777:7777/udp+tcp'
