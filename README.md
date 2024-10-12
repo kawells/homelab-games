@@ -159,11 +159,11 @@ restart.sh:
 ```
 #!/bin/bash
 echo Checking if Satisfactory is running...
-if echo > /dev/tcp/127.0.0.1/7777 > /dev/null
+if nc -zv -w5 localhost 7777 >/dev/null 2>&1
 then
  echo Satisfactory is accessible locally.
 fi
-if echo > /dev/tcp/hazy.servebeer.com/7777 > /dev/null
+if nc -zv -w5 hazy.servebeer.com 7777 >/dev/null
 then
  echo Satisfactory is accessible externally.
  exit 0
