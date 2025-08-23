@@ -1,6 +1,29 @@
 # homelab-games
 Documentation for game server
 
+## Routine Maintenance
+```
+# Install updates
+sudo -i
+apt update
+apt list --upgradable
+apt upgrade
+
+# Clean up Docker
+cd /srv/palworld
+docker compose pull
+docker compose up -d --remove-orphans
+docker image prune -a -f
+cd /srv/satisfactory
+docker compose pull
+docker compose up -d --remove-orphans
+docker image prune -a -f
+
+# Reboot
+reboot
+
+```
+
 ## IP Addresses
 - eth on enp3s0 - `192.168.1.30`
 - wlan on wlp4s0 - `192.168.1.69`
@@ -179,4 +202,6 @@ else
 fi
 ```
 Open ports on router
-- '7777:7777/udp+tcp'
+ - '7777:7777/tcp'
+ - '7777:7777/udp'
+ - '8888:8888/tcp'
