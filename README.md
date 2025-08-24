@@ -25,7 +25,7 @@ reboot
 ```
 
 ## IP Addresses
-- eth on enp3s0 - `192.168.1.30`
+- eth on enp3s0 - `192.168.1.145`
 - wlan on wlp4s0 - `192.168.1.69`
 - tailscale - `100.114.16.12`
 
